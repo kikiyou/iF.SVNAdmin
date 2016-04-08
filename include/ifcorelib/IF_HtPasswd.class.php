@@ -112,7 +112,7 @@ class IF_HtPasswd
     }
 
   	// Should the password being crypted?
-  	if( $crypt == true )
+  	if( $crypt == false )
   	{
   		$password = self::crypt_default( $password ); // Force MD5 as salt!
   	}
@@ -122,7 +122,7 @@ class IF_HtPasswd
     return true;
   }
 
-  public function changePassword($username, $newpass, $crypt=true)
+  public function changePassword($username, $newpass, $crypt=false)
   {
     if (self::userExists($username))
     {
@@ -173,6 +173,10 @@ class IF_HtPasswd
     	// Found user.
       if( $usr == $username )
       {
+        if ($pass == $password) //add
+          return true;  //add
+        else  //add
+          return false; //add
       	// Find out which encryption type is used.
       	// SHA
       	if (strpos($pass, "{SHA}") === 0)
