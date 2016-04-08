@@ -314,6 +314,8 @@ class IF_HtPasswd
     // Open file and write the array of users to it.
     $fh = fopen( $filename, "w" );
     flock( $fh, LOCK_EX );
+    $svn_head = "[users]\n"; //add
+    fwrite( $fh, $svn_head, strlen( $svn_head ) ); //add
     foreach( $this->m_data as $usr=>$pwd )
     {
       $line = $usr.":".$pwd."\n";
