@@ -286,7 +286,7 @@ class IF_HtPasswd
       // Split the line by ':'.
       // [0] = Username
       // [1] = Crypted password
-      $values = explode( ":", $line );
+      $values = explode( "=", $line );
 
       if( count( $values ) == 2 )
       {
@@ -318,7 +318,7 @@ class IF_HtPasswd
     fwrite( $fh, $svn_head, strlen( $svn_head ) ); //add
     foreach( $this->m_data as $usr=>$pwd )
     {
-      $line = $usr.":".$pwd."\n";
+      $line = $usr."=".$pwd."\n";
       fwrite( $fh, $line, strlen( $line ) );
     }
     flock( $fh, LOCK_UN );
