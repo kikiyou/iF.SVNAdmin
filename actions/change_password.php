@@ -27,7 +27,7 @@ else if($password != $password2) {
 else {
   try {
     // Ok, change password now.
-    $b = $appEngine->getUserEditProvider()->changePassword($username, $password, $crypt=false);
+    $b = $appEngine->getUserEditProvider()->changePassword($username, $password);
     if ($b) {
       $appEngine->getUserEditProvider()->save();
       $appEngine->addMessage(tr("The password has been changed."));
