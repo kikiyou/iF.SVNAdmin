@@ -7,12 +7,16 @@ config.ini    #认证方式
 userroleassignments.ini  #权限
 
 iF.SVNAdmin 是用来直接管理 svn的认证文件 authz 和 passwd 简单好用
+
 但是默认的passwd是基于http访问svn的  所以 passwd是根据htpassd加密的
 
 我不需要使用http访问 只需要基于svn:// 的访问  passwd是明文的
+
 所以 修改官方的iF.SVNAdmin 把加密改为明文
+
 --------
 标准的 改如下几部分   可实现不用加密passwd 
+
 /var/www/html/svnadmin/include/ifcorelib/IF_HtPasswd.class.php
 
 创建用户
