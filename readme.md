@@ -1,4 +1,7 @@
- 官方 github位置 --》https://github.com/mfreiholz/iF.SVNAdmin
+官方 github位置 --》https://github.com/mfreiholz/iF.SVNAdmin
+配置文件：./data/
+config.ini    #认证方式
+userroleassignments.ini  #权限
 
 iF.SVNAdmin 是用来直接管理 svn的认证文件 authz 和 passwd 简单好用
 但是默认的passwd是基于http访问svn的  所以 passwd是根据htpassd加密的
