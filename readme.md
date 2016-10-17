@@ -33,7 +33,7 @@ iF.SVNAdmin 是用来直接管理 svn的认证文件 authz 和 passwd 简单好�
   	{
   		$password = self::crypt_default( $password ); // Force MD5 as salt!
   	}
-```
+
 修改密码
   public function changePassword($username, $newpass, $crypt=true)
 改为
@@ -41,7 +41,7 @@ iF.SVNAdmin 是用来直接管理 svn的认证文件 authz 和 passwd 简单好�
 
 
 认证用户   （取消加密，直接读文件明文认证）
-``` php
+
 
   public function authenticate( $username, $password )
   {
